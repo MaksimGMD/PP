@@ -1,0 +1,100 @@
+﻿h1, h2, h3, h4, h5 {
+    font-weight: 600;
+}
+
+.login-form {
+    max-width: 400px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5% auto auto auto;
+    box-shadow: 0 0 10px 5px rgba(75, 160, 250, 0.25);
+}
+
+    .login-form .btn-primary {
+        width: 100px;
+    }
+
+.card {
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+}
+
+.position {
+    color: #545f6a;
+    font-weight: 400;
+}
+
+.vacation-days {
+    text-align: center;
+}
+
+.days-amount {
+    color: #28a745;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+.days-available {
+    color: #28a745;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+thead {
+    background: #007BFF;
+    border-radius: 5px;
+}
+
+    thead th {
+        color: #ffffff;
+    }
+
+table {
+    text-align: center;
+}
+
+.vacation-history {
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+}
+
+.forms {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px rgba(75, 160, 250, 0.25);
+}
+
+/*Table*/
+.table-condensed tr th {
+    border: 0px solid #2e353d;
+    color: white;
+    background-color: #2e353d;
+    text-align: center;
+}
+
+.table-condensed, .table-condensed tr td {
+    border: 0px solid #000;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #e4effa
+}
+
+tr:nth-child(odd) {
+    background: #fff;
+}
+
+.table a {
+    color: #e1f1ff
+}
+
+    .table a:hover {
+        color: #e1f1ff
+    }
+/*---------------------------*/

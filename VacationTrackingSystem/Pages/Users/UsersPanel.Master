@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="UsersPanel.master.cs" Inherits="VacationTrackingSystem.Pages.Users.UsersPanel" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
+    <script src="../../Scripts/jquery-3.4.1.slim.min.js"></script>
+    <script src="../../Scripts/bootstrap.bundle.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../Content/UserStyles.css"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Учёт отпусков</a>
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ОТПУСКА<span
+                            class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ПРОДЛЕНИЕ ОТПУСКОВ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ОТЗЫВ ИЗ ОТПУСКА</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">ЛИЧНАЯ КАРТОЧКА</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">ВЫЙТИ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">ВОЙТИ</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid py-3 px-5">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
