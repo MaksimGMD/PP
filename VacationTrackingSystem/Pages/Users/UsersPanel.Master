@@ -37,10 +37,10 @@
                         <a href="#" class="nav-link">ЛИЧНАЯ КАРТОЧКА</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">ВЫЙТИ</a>
+                        <asp:LinkButton runat="server" class="nav-link" OnClick="Unnamed1_Click">ВЫЙТИ</asp:LinkButton>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">ВОЙТИ</a>
+                        <asp:LinkButton runat="server" href="../AuthorizationPage.aspx" class="nav-link" CausesValidation="False">ВОЙТИ</asp:LinkButton>
                     </li>
                 </ul>
             </div>

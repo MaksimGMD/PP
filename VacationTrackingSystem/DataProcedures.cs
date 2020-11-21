@@ -22,7 +22,7 @@ namespace VacationTrackingSystem
             int VacationTypeID, int PersonalCardID)
         {
             
-            commandConfig("Users_Insert");
+            commandConfig("VacationList_Insert");
             command.Parameters.AddWithValue("@VacationStartDate", VacationStartDate);
             command.Parameters.AddWithValue("@VacationEndDate", VacationEndDate);
             command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
@@ -30,6 +30,34 @@ namespace VacationTrackingSystem
             command.Parameters.AddWithValue("@DaysAmount", DaysAmount);
             command.Parameters.AddWithValue("@VacationTypeID", VacationTypeID);
             command.Parameters.AddWithValue("@PersonalCardID", PersonalCardID);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Обновление отпуска
+        public void VacationList_Update(int IDVacationList, string VacationStartDate, string VacationEndDate, string ApplicationDate, bool Status, int DaysAmount,
+            int VacationTypeID, int PersonalCardID)
+        {
+
+            commandConfig("VacationList_Update");
+            command.Parameters.AddWithValue("@IDVacationList", IDVacationList);
+            command.Parameters.AddWithValue("@VacationStartDate", VacationStartDate);
+            command.Parameters.AddWithValue("@VacationEndDate", VacationEndDate);
+            command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
+            command.Parameters.AddWithValue("@Status", Status);
+            command.Parameters.AddWithValue("@DaysAmount", DaysAmount);
+            command.Parameters.AddWithValue("@VacationTypeID", VacationTypeID);
+            command.Parameters.AddWithValue("@PersonalCardID", PersonalCardID);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Удаление отпуска
+        public void VacationList_Delete(int IDVacationList)
+        {
+
+            commandConfig("VacationList_Delete");
+            command.Parameters.AddWithValue("@IDVacationList", IDVacationList);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();

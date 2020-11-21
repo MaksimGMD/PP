@@ -13,5 +13,14 @@ namespace VacationTrackingSystem.Pages.Users
         {
 
         }
+        //Выход из учётной записи
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainPage.aspx");
+            //Удаление cookies
+            HttpCookie cookie = new HttpCookie("Authorization");
+            cookie.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(cookie);
+        }
     }
 }

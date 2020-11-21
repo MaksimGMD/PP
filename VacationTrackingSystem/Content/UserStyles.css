@@ -68,9 +68,9 @@ table {
 
 /*Table*/
 .table-condensed tr th {
-    border: 0px solid #2e353d;
+    border: 0px solid #007bff;
     color: white;
-    background-color: #2e353d;
+    background-color: #007bff;
     text-align: center;
 }
 
@@ -91,10 +91,16 @@ tr:nth-child(odd) {
 }
 
 .table a {
-    color: #e1f1ff
+    color: #ffffff
 }
 
     .table a:hover {
-        color: #e1f1ff
+        color: #ffffff
     }
 /*---------------------------*/
+
+.Error {
+    font-size: 14px;
+    color: #cc0000;
+    font-weight: 400;
+}
