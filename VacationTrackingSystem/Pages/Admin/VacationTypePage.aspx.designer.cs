@@ -11,106 +11,88 @@ namespace VacationTrackingSystem.Pages.Admin
 {
 
 
-    public partial class AdminPanel
+    public partial class VacationTypePage
     {
 
         /// <summary>
-        /// form1 элемент управления.
+        /// sdsType элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsType;
 
         /// <summary>
-        /// aWeb элемент управления.
+        /// tbType элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor aWeb;
+        protected global::System.Web.UI.WebControls.TextBox tbType;
 
         /// <summary>
-        /// aUsers элемент управления.
+        /// RequiredFieldValidator2 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor aUsers;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
-        /// aVacations элемент управления.
+        /// btInsert элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor aVacations;
+        protected global::System.Web.UI.WebControls.Button btInsert;
 
         /// <summary>
-        /// aRecall элемент управления.
+        /// btUpdate элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor aRecall;
+        protected global::System.Web.UI.WebControls.Button btUpdate;
 
         /// <summary>
-        /// aExten элемент управления.
+        /// SelectedMessage элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor aExten;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SelectedMessage;
 
         /// <summary>
-        /// aType элемент управления.
+        /// btCanselSelected элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor aType;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btCanselSelected;
 
         /// <summary>
-        /// navbarDropdown элемент управления.
+        /// lblSelectedRow элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton navbarDropdown;
+        protected global::System.Web.UI.WebControls.Label lblSelectedRow;
 
         /// <summary>
-        /// dvOut элемент управления.
+        /// gvType элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvOut;
-
-        /// <summary>
-        /// dvIn элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvIn;
-
-        /// <summary>
-        /// MainContent элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.GridView gvType;
     }
 }

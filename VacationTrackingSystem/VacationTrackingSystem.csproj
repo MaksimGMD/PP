@@ -118,13 +118,17 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\AdminStyles.css" />
+    <Content Include="Content\img\delete-icon.png" />
     <Content Include="Content\img\icon.png" />
     <Content Include="Content\UserStyles.css" />
     <Content Include="Crypt_Library.dll" />
     <Content Include="Global.asax" />
     <Content Include="Pages\Admin\AdminPanel.Master" />
+    <Content Include="Pages\Admin\AdminPersonalCardPage.aspx" />
+    <Content Include="Pages\Admin\VacationTypePage.aspx" />
     <Content Include="Pages\AuthorizationPage.aspx" />
     <Content Include="Pages\Users\MainPage.aspx" />
+    <Content Include="Pages\Users\PersonalCardPage.aspx" />
     <Content Include="Pages\Users\UsersPanel.Master" />
     <Content Include="Pages\Users\VacationsPage.aspx" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -273,6 +277,20 @@
     <Compile Include="Pages\Admin\AdminPanel.Master.designer.cs">
       <DependentUpon>AdminPanel.Master</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\AdminPersonalCardPage.aspx.cs">
+      <DependentUpon>AdminPersonalCardPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\AdminPersonalCardPage.aspx.designer.cs">
+      <DependentUpon>AdminPersonalCardPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\VacationTypePage.aspx.cs">
+      <DependentUpon>VacationTypePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\VacationTypePage.aspx.designer.cs">
+      <DependentUpon>VacationTypePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AuthorizationPage.aspx.cs">
       <DependentUpon>AuthorizationPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -286,6 +304,13 @@
     </Compile>
     <Compile Include="Pages\Users\MainPage.aspx.designer.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Users\PersonalCardPage.aspx.cs">
+      <DependentUpon>PersonalCardPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Users\PersonalCardPage.aspx.designer.cs">
+      <DependentUpon>PersonalCardPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Users\UsersPanel.Master.cs">
       <DependentUpon>UsersPanel.Master</DependentUpon>

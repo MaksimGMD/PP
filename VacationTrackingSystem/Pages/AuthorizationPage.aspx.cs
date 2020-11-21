@@ -40,7 +40,7 @@ namespace VacationTrackingSystem.Pages
                         {
                             //Администратор
                             case ("Администратор"):
-                                Response.Redirect("");
+                                Response.Redirect("Admin/AdminPersonalCardPage.aspx");
                                 break;
                             //Сотрудник отдела кадров
                             case (""):
