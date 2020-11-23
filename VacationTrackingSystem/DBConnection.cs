@@ -17,18 +17,32 @@ namespace VacationTrackingSystem
             "TrustServerCertificate=False; ApplicationIntent=ReadWrite; MultiSubnetFailover=False");
 
         //Переменные
-        public static int idRecord;
+        public static int idRecord, idUser;
 
         //Получение данных из таблиц БД
         public static string qrVacation_List = "select [IDVacationList], [VacationTypeID], [TypeName] as 'Тип отпуска', " +
-            "[VacationStartDate] as 'Дата начала', [VacationEndDate] as 'Дата окончания', " +
-            "[Status] as 'Отпуск согласован' from [VacationList] " +
+            "[VacationStartDate] as 'Дата начала', [VacationEndDate] as 'Дата окончания', [DaysAmount] as 'Количество дней', " +
+            "[Status] as 'Статус отпуска', [ApplicationDate] as 'Дата заявления' from [VacationList] " +
             "inner join [VacationType] on [VacationTypeID] = [IDVacationType]",
-            qrType = "select [IDVacationType], [TypeName] as 'Тип отпуска' from [VacationType]",
-            qrPersonalCard = "select [IDPersonalCard], [Surname] as 'Фамилия', [Name] as 'Имя', [MiddleName] as 'Отчество', " +
+            qrType = "select [IDVacationType] as 'ID', [TypeName] as 'Тип отпуска' from [VacationType]",
+            qrPersonalCard = "select [IDPersonalCard] as 'ID', [Surname] as 'Фамилия', [Name] as 'Имя', [MiddleName] as 'Отчество', " +
             "[DaysAmount] as 'Количество дней', [IDPosition], [PositionName] as 'Должность', [Login] as 'Логин', [Password] from [PersonalCard] " +
             "inner join [Position] on [PositionID] = [IDPosition]",
-            qrPositions = "select [IDPosition], [PositionName] as 'Должность' from [Position]";
+            qrPositions = "select [IDPosition], [PositionName] as 'Должность' from [Position]",
+            qrVacation_Order = "select [IDVacationList] as 'ID', [VacationTypeID], [PersonalCardID], [Surname] + ' ' + [Name] + ' ' + [MiddleName] as 'Сотрудник', [PositionName] as 'Должность'," +
+            "[TypeName] as 'Тип отпуска', [VacationStartDate] as 'Дата начала', [VacationEndDate] as 'Дата окончания', " +
+            "[VacationList].[DaysAmount] as 'Количество дней',  [Status] as 'Статус отпуска', [ApplicationDate] as 'Дата заявления', [IDVacationOrder], " +
+            "[OrderNumber], [OrderDate] as 'Дата приказа', [PersonalCard].[DaysAmount] from [VacationOrder]  " +
+            "right join [VacationList] on [IDVacationList] = [VacationListID] " +
+            "inner join [VacationType] on [VacationTypeID] = [IDVacationType] " +
+            "inner join [PersonalCard] on [PersonalCardID] = [IDPersonalCard] " +
+            "inner join[Position] on[PositionID] = [IDPosition]",
+            qrExtension = "select [IDExtensionOrder] as 'ID', [VacationOrderID], [OrderNumber] as 'Номер отпуска', [ExtensionOrderNumber] as 'Номер приказа', " +
+            "[ExtensionDate] as 'Дата приказа', [ExtensionReason] as 'Причина продления', [ExtensionStartDate] as 'Дата начала', " +
+            "[ExtensionEndDate] as 'Дата окончания' from [ExtensionOrder] " +
+            "inner join [VacationOrder] on [VacationOrderID] = [IDVacationOrder]",
+            qrOrdersList = "select [IDVacationOrder], '№'+[OrderNumber]+ ' ' + [VacationStartDate]+' - '+[VacationEndDate] as 'Приказ' from [VacationOrder] " +
+            "inner join VacationList on [IDVacationList] = [VacationListID]";
 
 
         private SqlCommand command = new SqlCommand("", connection);
@@ -49,11 +63,13 @@ namespace VacationTrackingSystem
                 command.CommandText = "select [IDPersonalCard] from [dbo].[PersonalCard] " +
                "where [Login] = '" + login + "' and [Password] = '" + passwordEnc + "'";
                 DBConnection.connection.Open();
-                return Convert.ToInt32(command.ExecuteScalar().ToString()); ;
+                idUser = Convert.ToInt32(command.ExecuteScalar().ToString());
+                return (idUser);
             }
             catch
             {
-                return 0;
+                idUser = 0;
+                return (idUser);
             }
             finally
             {

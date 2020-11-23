@@ -25,30 +25,23 @@ namespace VacationTrackingSystem.Pages
                     lblAuthError.Visible = true;
                     break;
                 default:
-                    // Создать объект cookie
-                    HttpCookie cookie = new HttpCookie("Authorization");
-                    // Установить значения в нем
-                    cookie["Logged"] = Convert.ToString(connection.Authorization(tbLogin.Text, tbPassword.Text));
-                    Response.Cookies.Add(cookie);
                     lblAuthError.Visible = false;
-                    //Создаёт запрос cookie
-                    HttpCookie cookieReq = Request.Cookies["Authorization"];
-                    if (cookieReq != null)
+                    if (DBConnection.idUser != 0)
                     {
                         //Проверка прав по должности
-                        switch (connection.userRole(Convert.ToInt32(cookieReq["Logged"])))
+                        switch (connection.userRole(DBConnection.idUser))
                         {
                             //Администратор
                             case ("Администратор"):
                                 Response.Redirect("Admin/AdminPersonalCardPage.aspx");
                                 break;
                             //Сотрудник отдела кадров
-                            case (""):
-                                Response.Redirect("");
+                            case ("Сотрудник отдела кадров"):
+                                Response.Redirect("Admin/VacationPage.aspx");
                                 break;
                             //Обычный сотрудник
                             default:
-                                Response.Redirect("MainPage.aspx");
+                                Response.Redirect("Users/MainPage.aspx");
                                 break;
                         }
                     }

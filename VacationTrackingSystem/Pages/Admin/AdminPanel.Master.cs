@@ -14,11 +14,9 @@ namespace VacationTrackingSystem.Pages.Admin
             if (!IsPostBack)
             {
                 DBConnection connection = new DBConnection();
-                //Создаёт запрос cookie
-                HttpCookie cookieReq = Request.Cookies["Authorization"];
-                if (cookieReq != null)
+                if (DBConnection.idUser != 0)
                 {
-                    switch (connection.userRole(Convert.ToInt32(cookieReq["Logged"])))
+                    switch (connection.userRole(DBConnection.idUser))
                     {
                         //Сотрудник отдела кадров
                         case ("Сотрудник отдела кадров"):
@@ -35,6 +33,11 @@ namespace VacationTrackingSystem.Pages.Admin
                         default:
                             navbarDropdown.Text = "Авторизоваться";
                             dvIn.Visible = true;
+                            aUsers.Visible = false;
+                            aType.Visible = false;
+                            aExten.Visible = false;
+                            aRecall.Visible = false;
+                            aVacations.Visible = false;
                             break;
                     }
                 }
@@ -44,10 +47,7 @@ namespace VacationTrackingSystem.Pages.Admin
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
             Response.Redirect("../Users/MainPage.aspx");
-            //Удаление cookies
-            HttpCookie cookie = new HttpCookie("Authorization");
-            cookie.Expires = DateTime.Now.AddDays(-1);
-            Response.Cookies.Add(cookie);
+            DBConnection.idUser = 0;
         }
         //Вход в учётную запись
         protected void Unnamed2_Click(object sender, EventArgs e)

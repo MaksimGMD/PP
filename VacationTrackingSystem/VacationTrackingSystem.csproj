@@ -118,13 +118,17 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\AdminStyles.css" />
+    <Content Include="Content\img\admin.png" />
     <Content Include="Content\img\delete-icon.png" />
     <Content Include="Content\img\icon.png" />
+    <Content Include="Content\img\loading.gif" />
     <Content Include="Content\UserStyles.css" />
     <Content Include="Crypt_Library.dll" />
     <Content Include="Global.asax" />
     <Content Include="Pages\Admin\AdminPanel.Master" />
     <Content Include="Pages\Admin\AdminPersonalCardPage.aspx" />
+    <Content Include="Pages\Admin\ExtensionVacationPage.aspx" />
+    <Content Include="Pages\Admin\VacationPage.aspx" />
     <Content Include="Pages\Admin\VacationTypePage.aspx" />
     <Content Include="Pages\AuthorizationPage.aspx" />
     <Content Include="Pages\Users\MainPage.aspx" />
@@ -283,6 +287,20 @@
     </Compile>
     <Compile Include="Pages\Admin\AdminPersonalCardPage.aspx.designer.cs">
       <DependentUpon>AdminPersonalCardPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ExtensionVacationPage.aspx.cs">
+      <DependentUpon>ExtensionVacationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\ExtensionVacationPage.aspx.designer.cs">
+      <DependentUpon>ExtensionVacationPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\VacationPage.aspx.cs">
+      <DependentUpon>VacationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\VacationPage.aspx.designer.cs">
+      <DependentUpon>VacationPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\VacationTypePage.aspx.cs">
       <DependentUpon>VacationTypePage.aspx</DependentUpon>

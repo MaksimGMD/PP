@@ -5,6 +5,7 @@
 <html>
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="../../Content/img/admin.png" type="image/x-icon" />
     <link rel="stylesheet" href="../../Content/AdminStyles.css" />
     <link rel="stylesheet" href="../../Content/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
@@ -14,6 +15,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="overlay">
+            <div id="modalprogress" style="position: absolute; top: 50%; left: 50%; margin: -11px 0 0 -55px;">
+                <div class="theprogress">
+                    <img src="../../Content/img/loading.gif" />
+                </div>
+            </div>
+        </div>
        <div class="d-flex" id="wrapper">
             <!-- Sidebar -->
             <div class="border-right" id="sidebar-wrapper">
@@ -21,9 +29,9 @@
                 <div class="list-group list-group-flush">
                     <a id="aWeb" href="~/Pages/Users/MainPage.aspx" class="list-group-item list-group-item-action" runat="server">Открыть сайт</a>
                     <a id="aUsers" href="~/Pages/Admin/AdminPersonalCardPage.aspx" class="list-group-item list-group-item-action" runat="server">Личные дела</a>
-                    <a id="aVacations" href="#" class="list-group-item list-group-item-action" runat="server">Список отпусков</a>
+                    <a id="aVacations" href="~/Pages/Admin/VacationPage.aspx" class="list-group-item list-group-item-action" runat="server">График отпусков</a>
                     <a id="aRecall" href="#" class="list-group-item list-group-item-action" runat="server">Отзывы из отпуска</a>
-                    <a id="aExten" href="#" class="list-group-item list-group-item-action" runat="server">Продление отпуска</a>
+                    <a id="aExten" href="ExtensionVacationPage.aspx" class="list-group-item list-group-item-action" runat="server">Продление отпуска</a>
                     <a id="aType" href="~/Pages/Admin/VacationTypePage.aspx" class="list-group-item list-group-item-action" runat="server">Типы отпусков</a>
                 </div>
             </div>
@@ -51,6 +59,14 @@
     </form>
     <script src="../../Scripts/jquery-3.4.1.min.js"></script>
     <script src="../../Scripts/bootstrap.bundle.min.js"></script>
+    <%--Загрузка--%>
+    <script>
+        $(function () {
+            $(".overlay").fadeOut(1000, function () {
+                $("#wrapper").fadeIn(1000);
+            });
+        });
+    </script>
      <%--Выпадающие мень--%>
     <script>
         $("#menu-toggle").click(function (e) {

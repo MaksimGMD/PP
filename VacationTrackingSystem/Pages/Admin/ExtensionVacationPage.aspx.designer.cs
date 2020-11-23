@@ -11,53 +11,35 @@ namespace VacationTrackingSystem.Pages.Admin
 {
 
 
-    public partial class VacationPage
+    public partial class ExtensionVacationPage
     {
 
         /// <summary>
-        /// sdsVacationOrder элемент управления.
+        /// sdsExtension элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sdsVacationOrder;
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsExtension;
 
         /// <summary>
-        /// tbEmployee элемент управления.
+        /// sdsVacationNumber элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbEmployee;
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsVacationNumber;
 
         /// <summary>
-        /// tbPosition элемент управления.
+        /// ddlOrder элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPosition;
-
-        /// <summary>
-        /// tbTypeVacation элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbTypeVacation;
-
-        /// <summary>
-        /// tbStatus элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbStatus;
+        protected global::System.Web.UI.WebControls.DropDownList ddlOrder;
 
         /// <summary>
         /// tbStartDate элемент управления.
@@ -78,49 +60,49 @@ namespace VacationTrackingSystem.Pages.Admin
         protected global::System.Web.UI.WebControls.TextBox tbEndDate;
 
         /// <summary>
-        /// tbAplicationDate элемент управления.
+        /// RequiredFieldValidator2 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbAplicationDate;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
-        /// tbOrderDate элемент управления.
+        /// tbReason элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbOrderDate;
+        protected global::System.Web.UI.WebControls.TextBox tbReason;
 
         /// <summary>
-        /// tbOrderNumber элемент управления.
+        /// RequiredFieldValidator3 элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbOrderNumber;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
-        /// btConfirm элемент управления.
+        /// btInsert элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btConfirm;
+        protected global::System.Web.UI.WebControls.Button btInsert;
 
         /// <summary>
-        /// btReject элемент управления.
+        /// btUpdate элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btReject;
+        protected global::System.Web.UI.WebControls.Button btUpdate;
 
         /// <summary>
         /// tbSearch элемент управления.
@@ -186,12 +168,12 @@ namespace VacationTrackingSystem.Pages.Admin
         protected global::System.Web.UI.WebControls.Label lblSelectedRow;
 
         /// <summary>
-        /// gvVacation элемент управления.
+        /// gvExtension элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvVacation;
+        protected global::System.Web.UI.WebControls.GridView gvExtension;
     }
 }

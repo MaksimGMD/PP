@@ -61,6 +61,9 @@ namespace VacationTrackingSystem.Pages.Admin
             string strField = string.Empty;
             switch (e.SortExpression)
             {
+                case ("ID"):
+                    e.SortExpression = "[IDPersonalCard]";
+                    break;
                 case ("Фамилия"):
                     e.SortExpression = "[Surname]";
                     break;
@@ -118,7 +121,6 @@ namespace VacationTrackingSystem.Pages.Admin
 
         protected void gvUsers_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            e.Row.Cells[1].Visible = false;
             e.Row.Cells[6].Visible = false;
             e.Row.Cells[9].Visible = false;
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -249,6 +251,7 @@ namespace VacationTrackingSystem.Pages.Admin
                 foreach (GridViewRow row in gvUsers.Rows)
                 {
                         if(row.Cells[2].Text.Equals(tbSearch.Text) ||
+                        row.Cells[1].Text.Equals(tbSearch.Text) ||
                         row.Cells[3].Text.Equals(tbSearch.Text) ||
                         row.Cells[4].Text.Equals(tbSearch.Text) ||
                         row.Cells[5].Text.Equals(tbSearch.Text) ||
@@ -266,7 +269,7 @@ namespace VacationTrackingSystem.Pages.Admin
         {
             if (tbSearch.Text != "")
             {
-                string newQR = QR + "where [Surname] like '%" + tbSearch.Text + "%' or [Name] like '%" + tbSearch.Text + "%' or [MiddleName] like '%" + tbSearch.Text + "%' or" +
+                string newQR = QR + "where [IDPersonalCard] like '%" + tbSearch.Text + "%' or [Surname] like '%" + tbSearch.Text + "%' or [Name] like '%" + tbSearch.Text + "%' or [MiddleName] like '%" + tbSearch.Text + "%' or" +
                     "[DaysAmount] like '%" + tbSearch.Text + "%' or [PositionName] like '%" + tbSearch.Text + "%' or [Login] like '%" + tbSearch.Text + "%'";
                 gvFill(newQR);
                 btCancel.Visible = true;

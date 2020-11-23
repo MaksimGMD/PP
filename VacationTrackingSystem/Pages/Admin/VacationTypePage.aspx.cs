@@ -37,7 +37,6 @@ namespace VacationTrackingSystem.Pages.Admin
 
         protected void gvType_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            e.Row.Cells[1].Visible = false;
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(gvType, "Select$" + e.Row.RowIndex);
@@ -91,6 +90,9 @@ namespace VacationTrackingSystem.Pages.Admin
             string strField = string.Empty;
             switch (e.SortExpression)
             {
+                case ("ID"):
+                    e.SortExpression = "[IDVacationType]";
+                    break;
                 case ("Название жанра"):
                     e.SortExpression = "[Genre_Name]";
                     break;

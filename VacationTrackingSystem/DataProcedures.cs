@@ -17,9 +17,18 @@ namespace VacationTrackingSystem
             command.CommandText = "[dbo].[" + config + "]";
             command.Parameters.Clear();
         }
-
+        //Изменение количества дней в личной карточки
+        public void Days_Amount_Update(int DaysAmount, int IDPersonalCard)
+        {
+            commandConfig("Days_Amount_Update");
+            command.Parameters.AddWithValue("@DaysAmount", DaysAmount);
+            command.Parameters.AddWithValue("@IDPersonalCard", IDPersonalCard);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
         //Добавление отпуска
-        public void VacationList_Insert(string VacationStartDate, string VacationEndDate, string ApplicationDate, bool Status, int DaysAmount,
+        public void VacationList_Insert(string VacationStartDate, string VacationEndDate, string ApplicationDate, string Status, int DaysAmount,
             int VacationTypeID, int PersonalCardID)
         {
             
@@ -36,7 +45,7 @@ namespace VacationTrackingSystem
             DBConnection.connection.Close();
         }
         //Обновление отпуска
-        public void VacationList_Update(int IDVacationList, string VacationStartDate, string VacationEndDate, string ApplicationDate, bool Status, int DaysAmount,
+        public void VacationList_Update(int IDVacationList, string VacationStartDate, string VacationEndDate, string Status, int DaysAmount,
             int VacationTypeID, int PersonalCardID)
         {
 
@@ -44,7 +53,6 @@ namespace VacationTrackingSystem
             command.Parameters.AddWithValue("@IDVacationList", IDVacationList);
             command.Parameters.AddWithValue("@VacationStartDate", VacationStartDate);
             command.Parameters.AddWithValue("@VacationEndDate", VacationEndDate);
-            command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
             command.Parameters.AddWithValue("@Status", Status);
             command.Parameters.AddWithValue("@DaysAmount", DaysAmount);
             command.Parameters.AddWithValue("@VacationTypeID", VacationTypeID);
@@ -128,6 +136,66 @@ namespace VacationTrackingSystem
         {
             commandConfig("VacationType_Delete");
             command.Parameters.AddWithValue("@IDVacationType", IDVacationType);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+
+        //Обновление статуса отпуска
+        public void VacationList_Status_Update(int IDVacationList, string Status)
+        {
+            commandConfig("VacationList_Status_Update");
+            command.Parameters.AddWithValue("@IDVacationList", IDVacationList);
+            command.Parameters.AddWithValue("@Status", Status);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+
+        //Добавление приказа на отпуск
+        public void VacationOrder_Insert(string OrderDate, int VacationListID)
+        {
+            commandConfig("VacationOrder_Insert");
+            command.Parameters.AddWithValue("@OrderDate", OrderDate);
+            command.Parameters.AddWithValue("@VacationListID", VacationListID);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Добавление приказа о продлении отпуска
+        public void ExtensionOrder_Insert(string ExtensionDate, string ExtensionReason, string ExtensionStartDate, string ExtensionEndDate,
+            int VacationOrderID)
+        {
+            commandConfig("ExtensionOrder_Insert");
+            command.Parameters.AddWithValue("@ExtensionDate", ExtensionDate);
+            command.Parameters.AddWithValue("@ExtensionReason", ExtensionReason);
+            command.Parameters.AddWithValue("@ExtensionStartDate", ExtensionStartDate);
+            command.Parameters.AddWithValue("@ExtensionEndDate", ExtensionEndDate);
+            command.Parameters.AddWithValue("@VacationOrderID", VacationOrderID);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Обновление приказа о продлении отпуска
+        public void ExtensionOrder_Update(int IDExtensionOrder, string ExtensionDate, string ExtensionReason, string ExtensionStartDate, string ExtensionEndDate,
+            int VacationOrderID)
+        {
+            commandConfig("ExtensionOrder_Update");
+            command.Parameters.AddWithValue("@IDExtensionOrder", IDExtensionOrder);
+            command.Parameters.AddWithValue("@ExtensionDate", ExtensionDate);
+            command.Parameters.AddWithValue("@ExtensionReason", ExtensionReason);
+            command.Parameters.AddWithValue("@ExtensionStartDate", ExtensionStartDate);
+            command.Parameters.AddWithValue("@ExtensionEndDate", ExtensionEndDate);
+            command.Parameters.AddWithValue("@VacationOrderID", VacationOrderID);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Удаление приказа о продлении отпуска
+        public void ExtensionOrder_Delete(int IDExtensionOrder)
+        {
+            commandConfig("ExtensionOrder_Delete");
+            command.Parameters.AddWithValue("@IDExtensionOrder", IDExtensionOrder);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();

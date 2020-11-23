@@ -6,41 +6,43 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    <link rel="icon" href="../../Content/img/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
-    <script src="../../Scripts/jquery-3.4.1.slim.min.js"></script>
-    <script src="../../Scripts/bootstrap.bundle.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../Content/UserStyles.css"/>
+    <link rel="stylesheet" href="../../Content/UserStyles.css" />
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="overlay">
+            <div id="modalprogress" style="position: absolute; top: 50%; left: 50%; margin: -11px 0 0 -55px;">
+                <div class="theprogress">
+                    <img src="../../Content/img/loading.gif" />
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#">Учёт отпусков</a>
-            </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ОТПУСКА<span
+                        <a class="nav-link" href="VacationsPage.aspx">ОТПУСК<span
                             class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ПРОДЛЕНИЕ ОТПУСКОВ</a>
+                        <a class="nav-link" href="#">ПРОДЛЕНИЕ ОТПУСКА</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ОТЗЫВ ИЗ ОТПУСКА</a>
-                    </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="liPersonalCard" runat="server">
                         <a href="#" class="nav-link">ЛИЧНАЯ КАРТОЧКА</a>
                     </li>
-                    <li class="nav-item">
-                        <asp:LinkButton runat="server" class="nav-link" OnClick="Unnamed1_Click">ВЫЙТИ</asp:LinkButton>
+                    <li class="nav-item" id="liOut" runat="server">
+                        <asp:LinkButton runat="server" class="nav-link" OnClick="Unnamed1_Click" CausesValidation="False" ID="btOut">ВЫЙТИ</asp:LinkButton>
                     </li>
-                    <li class="nav-item">
-                        <asp:LinkButton runat="server" href="../AuthorizationPage.aspx" class="nav-link" CausesValidation="False">ВОЙТИ</asp:LinkButton>
+                    <li class="nav-item" id="liIn" runat="server">
+                        <asp:LinkButton runat="server" href="../AuthorizationPage.aspx" class="nav-link" CausesValidation="False" ID="btIn">ВОЙТИ</asp:LinkButton>
                     </li>
                 </ul>
             </div>
@@ -50,5 +52,15 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <script src="../../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../../Scripts/bootstrap.bundle.min.js"></script>
+    <%--Загрузка--%>
+    <script>
+        $(function () {
+            $(".overlay").fadeOut(1000, function () {
+                $("#wrapper").fadeIn(1000);
+            });
+        });
+    </script>
 </body>
 </html>
