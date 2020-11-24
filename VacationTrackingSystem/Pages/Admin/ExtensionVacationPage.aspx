@@ -38,7 +38,7 @@
                 <div class="form-group">
                     <label for="tbReason">Причина продления</label>
                     <asp:TextBox ID="tbReason" runat="server" placeholder="Введите причину продления отпуска" class="form-control"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="Error" ErrorMessage="Введите дату" Display="Dynamic" ControlToValidate="tbReason"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="Error" ErrorMessage="Введите причину продления отпуска" Display="Dynamic" ControlToValidate="tbReason"></asp:RequiredFieldValidator>
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@
         <div class="table" style="overflow-x: auto; width: 100%">
             <asp:GridView ID="gvExtension" runat="server" AllowSorting="true"
                 CssClass="table table-condensed table-hover" UseAccessibleHeader="true" CurrentSortDirection="ASC" Font-Size="14px"
-                AlternatingRowStyle-Wrap="false" HeaderStyle-HorizontalAlign="Center" OnRowDataBound="gvExtension_RowDataBound" OnRowDeleting="gvExtension_RowDeleting" OnSelectedIndexChanged="gvExtension_SelectedIndexChanged" OnSorting="gvExtension_Sorting" >
+                AlternatingRowStyle-Wrap="false" HeaderStyle-HorizontalAlign="Center" OnRowDataBound="gvExtension_RowDataBound" OnRowDeleting="gvExtension_RowDeleting" OnSelectedIndexChanged="gvExtension_SelectedIndexChanged" OnSorting="gvExtension_Sorting">
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>

@@ -11,18 +11,20 @@
     <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
     <link rel="stylesheet" href="../../Content/bootstrap-grid.min.css" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../Content/preloader.css">
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="overlay">
-            <div id="modalprogress" style="position: absolute; top: 50%; left: 50%; margin: -11px 0 0 -55px;">
-                <div class="theprogress">
-                    <img src="../../Content/img/loading.gif" />
-                </div>
+        <div class="preloader" id="preloader">
+            <div class="cssload-spinner">
+                <div class="cssload-ball cssload-ball-1"></div>
+                <div class="cssload-ball cssload-ball-2"></div>
+                <div class="cssload-ball cssload-ball-3"></div>
+                <div class="cssload-ball cssload-ball-4"></div>
             </div>
         </div>
-       <div class="d-flex" id="wrapper">
+        <div class="d-flex" id="wrapper">
             <!-- Sidebar -->
             <div class="border-right" id="sidebar-wrapper">
                 <div class="sidebar-heading">Система учёта отпусков</div>
@@ -30,7 +32,7 @@
                     <a id="aWeb" href="~/Pages/Users/MainPage.aspx" class="list-group-item list-group-item-action" runat="server">Открыть сайт</a>
                     <a id="aUsers" href="~/Pages/Admin/AdminPersonalCardPage.aspx" class="list-group-item list-group-item-action" runat="server">Личные дела</a>
                     <a id="aVacations" href="~/Pages/Admin/VacationPage.aspx" class="list-group-item list-group-item-action" runat="server">График отпусков</a>
-                    <a id="aRecall" href="#" class="list-group-item list-group-item-action" runat="server">Отзывы из отпуска</a>
+                    <a id="aRecall" href="~/Pages/Admin/RecallVacationPage.aspx" class="list-group-item list-group-item-action" runat="server">Отзывы из отпуска</a>
                     <a id="aExten" href="ExtensionVacationPage.aspx" class="list-group-item list-group-item-action" runat="server">Продление отпуска</a>
                     <a id="aType" href="~/Pages/Admin/VacationTypePage.aspx" class="list-group-item list-group-item-action" runat="server">Типы отпусков</a>
                 </div>
@@ -61,13 +63,12 @@
     <script src="../../Scripts/bootstrap.bundle.min.js"></script>
     <%--Загрузка--%>
     <script>
-        $(function () {
-            $(".overlay").fadeOut(1000, function () {
-                $("#wrapper").fadeIn(1000);
-            });
-        });
+        window.onload = function () {
+            let preloader = document.getElementById('preloader');
+            preloader.style.display = 'none';
+        };
     </script>
-     <%--Выпадающие мень--%>
+    <%--Выпадающие мень--%>
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();

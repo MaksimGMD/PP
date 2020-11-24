@@ -167,7 +167,7 @@ namespace VacationTrackingSystem.Pages.Admin
                 GridViewRow rows = gvUsers.SelectedRow;
                 DBConnection.idRecord = Convert.ToInt32(gvUsers.Rows[Index].Cells[1].Text.ToString());
                 procedure.PersonalCard_Delete(DBConnection.idRecord);
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Запись успешно удалена.')", true);
+                Response.Redirect(Request.Url.AbsoluteUri);
                 gvFill(QR);
                 Cleaner();
                 ddlPositionFill();
@@ -193,7 +193,7 @@ namespace VacationTrackingSystem.Pages.Admin
                     lblLoginCheck.Visible = false;
                     procedures.PersonalCard_Insert(tbSurname.Text, tbName.Text, tbMiddleName.Text, Convert.ToInt32(tbDaysAmount.Text), tbLogin.Text,
                     tbPassword.Text, Convert.ToInt32(ddlPosition.SelectedValue.ToString()));
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Запись успешно добавлен.')", true);
+                    Response.Redirect(Request.Url.AbsoluteUri);
                     gvFill(QR);
                     Cleaner();
                     ddlPositionFill();
@@ -214,7 +214,7 @@ namespace VacationTrackingSystem.Pages.Admin
                     DataProcedures procedures = new DataProcedures();
                     procedures.PersonalCard_Update(DBConnection.idRecord, tbSurname.Text, tbName.Text, tbMiddleName.Text, Convert.ToInt32(tbDaysAmount.Text), tbLogin.Text,
                     tbPassword.Text, Convert.ToInt32(ddlPosition.SelectedValue.ToString()));
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Запись успешно обновлена.')", true);
+                    Response.Redirect(Request.Url.AbsoluteUri);
                     gvFill(QR);
                     Cleaner();
                     ddlPositionFill();

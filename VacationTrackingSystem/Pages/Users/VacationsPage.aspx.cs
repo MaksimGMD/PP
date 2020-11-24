@@ -128,6 +128,7 @@ namespace VacationTrackingSystem.Pages.Users
                             Cleaner();
                             gvFill(QR);
                             pageDataFill();
+                            Response.Redirect(Request.Url.AbsoluteUri);
                             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + selectedType + ", успешно добавлен. Ожидайте подтверждения отпуска руководителем.')", true);
                         }
                         catch
@@ -197,6 +198,7 @@ namespace VacationTrackingSystem.Pages.Users
                             Cleaner();
                             gvFill(QR);
                             pageDataFill();
+                            Response.Redirect(Request.Url.AbsoluteUri);
                             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + selectedType + ", успешно добавлен. Ожидайте подтверждения отпуска руководителем.')", true);
                         }
                         catch
@@ -337,6 +339,7 @@ namespace VacationTrackingSystem.Pages.Users
                 Cleaner();
                 gvFill(QR);
                 pageDataFill();
+                Response.Redirect(Request.Url.AbsoluteUri);
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Запись успешно удалена.')", true);
             }
             catch

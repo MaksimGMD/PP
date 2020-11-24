@@ -53,8 +53,8 @@ namespace VacationTrackingSystem.Pages.Admin
                 GridViewRow rows = gvType.SelectedRow;
                 DBConnection.idRecord = Convert.ToInt32(gvType.Rows[Index].Cells[1].Text.ToString());
                 procedure.VacationType_Delete(DBConnection.idRecord);
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Запись успешно удалена.')", true);
                 gvFill(QR);
+                Response.Redirect(Request.Url.AbsoluteUri);
                 Cleaner();
             }
             catch
@@ -139,8 +139,8 @@ namespace VacationTrackingSystem.Pages.Admin
             try
             {
                 procedures.VacationType_Insert(tbType.Text);
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Запись успешно добавлен.')", true);
                 gvFill(QR);
+                Response.Redirect(Request.Url.AbsoluteUri);
                 Cleaner();
             }
             catch
@@ -157,8 +157,8 @@ namespace VacationTrackingSystem.Pages.Admin
                 {
                     DataProcedures procedures = new DataProcedures();
                     procedures.VacationType_Update(DBConnection.idRecord, tbType.Text);
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Запись успешно обновлена.')", true);
                     gvFill(QR);
+                    Response.Redirect(Request.Url.AbsoluteUri);
                     Cleaner();
                 }
             }

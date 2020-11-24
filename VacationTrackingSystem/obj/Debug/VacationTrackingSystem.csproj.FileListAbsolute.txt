@@ -74,3 +74,10 @@ C:\Users\maksg\source\repos\VacationTrackingSystem\VacationTrackingSystem\obj\De
 C:\Users\maksg\source\repos\VacationTrackingSystem\VacationTrackingSystem\obj\Debug\VacationTrackingSystem.csproj.CopyComplete
 C:\Users\maksg\source\repos\VacationTrackingSystem\VacationTrackingSystem\obj\Debug\VacationTrackingSystem.dll
 C:\Users\maksg\source\repos\VacationTrackingSystem\VacationTrackingSystem\obj\Debug\VacationTrackingSystem.pdb
+C:\Users\maksg\source\repos\VacationTrackingSystem\VacationTrackingSystem\bin\BouncyCastle.Crypto.dll
+C:\Users\maksg\source\repos\VacationTrackingSystem\VacationTrackingSystem\bin\MimeKit.dll
+C:\Users\maksg\source\repos\VacationTrackingSystem\VacationTrackingSystem\bin\System.Buffers.dll
+C:\Users\maksg\source\repos\VacationTrackingSystem\VacationTrackingSystem\bin\BouncyCastle.Crypto.xml
+C:\Users\maksg\source\repos\VacationTrackingSystem\VacationTrackingSystem\bin\MimeKit.pdb
+C:\Users\maksg\source\repos\VacationTrackingSystem\VacationTrackingSystem\bin\MimeKit.xml
+C:\Users\maksg\source\repos\VacationTrackingSystem\VacationTrackingSystem\bin\System.Buffers.xml

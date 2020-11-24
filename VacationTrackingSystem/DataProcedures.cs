@@ -31,7 +31,7 @@ namespace VacationTrackingSystem
         public void VacationList_Insert(string VacationStartDate, string VacationEndDate, string ApplicationDate, string Status, int DaysAmount,
             int VacationTypeID, int PersonalCardID)
         {
-            
+
             commandConfig("VacationList_Insert");
             command.Parameters.AddWithValue("@VacationStartDate", VacationStartDate);
             command.Parameters.AddWithValue("@VacationEndDate", VacationEndDate);
@@ -196,6 +196,30 @@ namespace VacationTrackingSystem
         {
             commandConfig("ExtensionOrder_Delete");
             command.Parameters.AddWithValue("@IDExtensionOrder", IDExtensionOrder);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Добавление отзыва из отпуска
+        public void RecallOrder_Insert(string RecallOrderDate, string RecallReason, string RecallDate, int VacationOrderID)
+        {
+            commandConfig("RecallOrder_Insert");
+            command.Parameters.AddWithValue("@RecallOrderDate", RecallOrderDate);
+            command.Parameters.AddWithValue("@RecallReason", RecallReason);
+            command.Parameters.AddWithValue("@RecallDate", RecallDate);
+            command.Parameters.AddWithValue("@VacationOrderID", VacationOrderID);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Обновление отзыва из отпуска
+        public void RecallOrder_Update(int IDRecallOrder, string RecallReason, string RecallDate, int VacationOrderID)
+        {
+            commandConfig("RecallOrder_Update");
+            command.Parameters.AddWithValue("@IDRecallOrder", IDRecallOrder);
+            command.Parameters.AddWithValue("@RecallReason", RecallReason);
+            command.Parameters.AddWithValue("@RecallDate", RecallDate);
+            command.Parameters.AddWithValue("@VacationOrderID", VacationOrderID);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();

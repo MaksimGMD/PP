@@ -104,3 +104,28 @@ tr:nth-child(odd) {
     color: #cc0000;
     font-weight: 400;
 }
+
+.feedback-form {
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px rgba(75, 160, 250, 0.25);
+}
+
+.contactInf {
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px rgba(75, 160, 250, 0.25);
+}
+
+    .contactInf h5 {
+        color: #6d7073;
+        font-weight: 400
+    }
+
+li::marker {
+    color: #007bff;
+}
+
+.inf {
+    font-weight: 600
+}

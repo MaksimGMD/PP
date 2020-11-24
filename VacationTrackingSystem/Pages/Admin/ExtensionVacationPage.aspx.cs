@@ -133,7 +133,7 @@ namespace VacationTrackingSystem.Pages.Admin
                 GridViewRow rows = gvExtension.SelectedRow;
                 DBConnection.idRecord = Convert.ToInt32(gvExtension.Rows[Index].Cells[1].Text.ToString());
                 procedure.ExtensionOrder_Delete(DBConnection.idRecord);
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Запись успешно удалена.')", true);
+                Response.Redirect(Request.Url.AbsoluteUri);
                 gvFill(QR);
                 Cleaner();
                 ddlOrderFill();
@@ -163,6 +163,7 @@ namespace VacationTrackingSystem.Pages.Admin
             tbEndDate.Text = Convert.ToDateTime(rows.Cells[8].Text.ToString()).ToString("yyyy-MM-dd");
             tbStartDate.Text = Convert.ToDateTime(rows.Cells[7].Text.ToString()).ToString("yyyy-MM-dd");
             tbReason.Text = rows.Cells[6].Text.ToString();
+            ddlOrder.SelectedValue = rows.Cells[2].Text.ToString();
             SelectedMessage.Visible = true;
             lblSelectedRow.Text = "Выбрана строка с ID " + DBConnection.idRecord;
             btUpdate.Visible = true;
@@ -173,6 +174,7 @@ namespace VacationTrackingSystem.Pages.Admin
             DataProcedures procedures = new DataProcedures();
             try
             {
+                
                 SqlCommand command = new SqlCommand("", DBConnection.connection);
                 command.CommandType = System.Data.CommandType.Text;
                 command.CommandText = "select [VacationEndDate] from [VacationOrder] inner join VacationList on [IDVacationList] = [VacationListID] " +
@@ -186,7 +188,7 @@ namespace VacationTrackingSystem.Pages.Admin
                 string endDate = theDate1.ToString("dd.MM.yyyy");
                 DateTime dateNow = DateTime.UtcNow.Date;
                 procedures.ExtensionOrder_Insert(dateNow.ToString(), tbReason.Text.ToString(), startDate, endDate, Convert.ToInt32(ddlOrder.SelectedValue.ToString()));
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Запись успешно добавлен.')", true);
+                Response.Redirect(Request.Url.AbsoluteUri);
                 gvFill(QR);
                 Cleaner();
                 ddlOrderFill();
@@ -217,7 +219,7 @@ namespace VacationTrackingSystem.Pages.Admin
                     string endDate = theDate1.ToString("dd.MM.yyyy");
                     DateTime dateNow = DateTime.UtcNow.Date;
                     procedures.ExtensionOrder_Update(DBConnection.idRecord, dateNow.ToString(), tbReason.Text.ToString(), startDate, endDate, Convert.ToInt32(ddlOrder.SelectedValue.ToString()));
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Запись успешно добавлен.')", true);
+                    Response.Redirect(Request.Url.AbsoluteUri);
                     gvFill(QR);
                     Cleaner();
                     ddlOrderFill();

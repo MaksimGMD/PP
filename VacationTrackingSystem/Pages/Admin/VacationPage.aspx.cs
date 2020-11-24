@@ -62,7 +62,7 @@ namespace VacationTrackingSystem.Pages.Admin
                     DataProcedures procedures = new DataProcedures();
                     procedures.VacationOrder_Insert(dateNow.ToString(), DBConnection.idRecord);
                     procedures.VacationList_Status_Update(DBConnection.idRecord, "Согласован");
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Отпуск успешно согласован.')", true);
+                    Response.Redirect(Request.Url.AbsoluteUri);
                     gvFill(QR);
                     Cleaner();
                     btConfirm.Visible = false;

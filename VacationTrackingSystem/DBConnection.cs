@@ -42,7 +42,10 @@ namespace VacationTrackingSystem
             "[ExtensionEndDate] as 'Дата окончания' from [ExtensionOrder] " +
             "inner join [VacationOrder] on [VacationOrderID] = [IDVacationOrder]",
             qrOrdersList = "select [IDVacationOrder], '№'+[OrderNumber]+ ' ' + [VacationStartDate]+' - '+[VacationEndDate] as 'Приказ' from [VacationOrder] " +
-            "inner join VacationList on [IDVacationList] = [VacationListID]";
+            "inner join VacationList on [IDVacationList] = [VacationListID]",
+            qrRecallOrder = "select [IDRecallOrder] as 'ID', [VacationOrderID], [OrderNumber] as 'Номер отпуска', [RecallOrderNumber] as 'Номер приказа', " +
+            "[RecallOrderDate] as 'Дата приказа', [RecallReason] as 'Причина отзыва', [RecallDate] as 'Дата отзыва' from [RecallOrder] " +
+            "inner join [VacationOrder] on [VacationOrderID] = [IDVacationOrder]";
 
 
         private SqlCommand command = new SqlCommand("", connection);
